@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "361705181137",
+    "project_id": "diplommy-9138b",
+    "storage_bucket": "diplommy-9138b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361705181137:android:8b28ee201624d8f5675af0",
+        "android_client_info": {
+          "package_name": "com.markvtls.diploma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "361705181137-ss70oti3hreiitb82dmg2pemdttnoavj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.markvtls.diploma",
+            "certificate_hash": "0b0b3ca87bd7b0f9f8ea67196a0782d1a7b3a3e6"
+          }
+        },
+        {
+          "client_id": "361705181137-diremluk9okbvpq1uurlail46ndoekd3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMRVnyM0F4ehRKPM4W3ul9EMBON4qEocM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "361705181137-diremluk9okbvpq1uurlail46ndoekd3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
