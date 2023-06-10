@@ -8,6 +8,21 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.markvtls.diploma.presentation.fragments.MainFragment"
-        android:label="fragment_main"
+        android:label="Главная"
         tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/ticketsFragment"
+        android:name="com.markvtls.diploma.presentation.fragments.TicketsFragment"
+        android:label="Тарифы"
+        tools:layout="@layout/fragment_tickets" />
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.markvtls.diploma.presentation.fragments.MapFragment"
+        android:label="Карта"
+        tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.markvtls.diploma.presentation.fragments.UserFragment"
+        android:label="Профиль"
+        tools:layout="@layout/fragment_user" />
 </navigation>

@@ -5,9 +5,11 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.ActionCodeSettings
 import com.google.firebase.auth.FirebaseAuth
 import com.markvtls.diploma.databinding.ActivityMainBinding
@@ -39,7 +41,6 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment?
                 ?: return
-        navHostFragment.navController
 
         lifecycleScope.launch {
             userViewModel.userEmail.collect { email ->
@@ -50,6 +51,11 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+
+        val navController = navHostFragment.navController
+        findViewById<BottomNavigationView>(R.id.bottom_nav)
+            .setupWithNavController(navController)
+
 
         signInLauncher.launch(signInIntent)
     }
