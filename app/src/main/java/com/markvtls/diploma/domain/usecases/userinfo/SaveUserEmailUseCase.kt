@@ -1,4 +1,4 @@
-package com.markvtls.diploma.domain.usecases
+package com.markvtls.diploma.domain.usecases.userinfo
 
 import com.markvtls.diploma.domain.repository.UserRepository
 import javax.inject.Inject

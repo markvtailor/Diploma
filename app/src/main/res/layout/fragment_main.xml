@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.fragments.MainFragment"
+    android:paddingBottom="56dp"
     android:background="@color/light_gray">
 
     <TextView
@@ -40,7 +41,7 @@
             <ImageView
                 android:layout_marginStart="16dp"
                 android:id="@+id/destination_image"
-                android:src="@drawable/icon_from"
+                android:src="@drawable/ic_from"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/text_from"
                 app:layout_constraintBottom_toBottomOf="@id/text_from"
@@ -51,7 +52,7 @@
             <ImageView
                 android:layout_marginStart="16dp"
                 android:id="@+id/destination_image_two"
-                android:src="@drawable/icon_to"
+                android:src="@drawable/ic_to"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/text_to"
                 app:layout_constraintBottom_toBottomOf="@id/text_to"
@@ -70,15 +71,17 @@
             app:layout_constraintTop_toTopOf="parent"
             android:hint="Откуда">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/dark_blue"
-                android:fontFamily="@font/lack_regular"
-                />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:fontFamily="@font/lack_regular"
+                    android:maxLength="20"
+                    android:maxLines="1"
+                    android:textColor="@color/dark_blue" />
 
 
-        </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
             <com.google.android.material.divider.MaterialDivider
@@ -104,6 +107,9 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLength="20"
+                    android:maxLines="1"
                     android:textColor="@color/dark_blue"
                     android:fontFamily="@font/lack_regular"
                     />
@@ -126,6 +132,7 @@
                     android:id="@+id/card_parom"
                     android:layout_width="104dp"
                     android:layout_height="64dp"
+                    app:strokeWidth="2dp"
                     style="?attr/materialCardViewElevatedStyle"
                     app:strokeColor="@color/white">
 
@@ -160,7 +167,8 @@
                     android:layout_width="104dp"
                     android:layout_height="64dp"
                     style="?attr/materialCardViewElevatedStyle"
-                    app:strokeColor="@color/white">
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="2dp">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
@@ -187,9 +195,10 @@
 
                 </com.google.android.material.card.MaterialCardView>
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card"
+                    android:id="@+id/card_airship"
                     android:layout_width="104dp"
                     android:layout_height="64dp"
+                    app:strokeWidth="2dp"
                     style="?attr/materialCardViewElevatedStyle"
                     app:strokeColor="@color/white">
 

@@ -2,10 +2,10 @@ package com.markvtls.diploma.presentation.fragments
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.markvtls.diploma.domain.usecases.GetUserEmailUseCase
-import com.markvtls.diploma.domain.usecases.GetUserPhoneUseCase
-import com.markvtls.diploma.domain.usecases.SaveUserEmailUseCase
-import com.markvtls.diploma.domain.usecases.SaveUserPhoneUseCase
+import com.markvtls.diploma.domain.usecases.userinfo.GetUserEmailUseCase
+import com.markvtls.diploma.domain.usecases.userinfo.GetUserPhoneUseCase
+import com.markvtls.diploma.domain.usecases.userinfo.SaveUserEmailUseCase
+import com.markvtls.diploma.domain.usecases.userinfo.SaveUserPhoneUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -26,6 +26,7 @@ class UserViewModel @Inject constructor(
 
     private val _userEmail = MutableStateFlow("")
     val userEmail: StateFlow<String> get() = _userEmail
+
 
     init {
         getUserEmail()

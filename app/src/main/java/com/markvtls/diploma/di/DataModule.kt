@@ -1,8 +1,10 @@
 package com.markvtls.diploma.di
 
 import android.content.Context
+import com.markvtls.diploma.data.repository.TicketsRepositoryImpl
 import com.markvtls.diploma.data.repository.UserRepositoryImpl
 import com.markvtls.diploma.data.source.local.UserInfoStore
+import com.markvtls.diploma.domain.repository.TicketRepository
 import com.markvtls.diploma.domain.repository.UserRepository
 import dagger.Module
 import dagger.Provides
@@ -24,4 +26,7 @@ class DataModule {
     @Singleton
     fun provideUserRepository(userInfoStore: UserInfoStore): UserRepository = UserRepositoryImpl(userInfoStore)
 
+    @Provides
+    @Singleton
+    fun provideTicketsRepository(): TicketRepository = TicketsRepositoryImpl()
 }

@@ -5,10 +5,6 @@
         android:icon="@drawable/ic_ship"
         android:title="Главная" />
     <item
-        android:id="@+id/ticketsFragment"
-        android:icon="@drawable/ic_ruble"
-        android:title="Тарифы" />
-    <item
         android:id="@+id/mapFragment"
         android:icon="@drawable/ic_globe"
         android:title="Карта" />

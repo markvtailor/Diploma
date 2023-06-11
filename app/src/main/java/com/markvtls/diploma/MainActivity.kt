@@ -13,7 +13,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.ActionCodeSettings
 import com.google.firebase.auth.FirebaseAuth
 import com.markvtls.diploma.databinding.ActivityMainBinding
+import com.markvtls.diploma.presentation.fragments.TicketsViewModel
 import com.markvtls.diploma.presentation.fragments.UserViewModel
+import com.yandex.mapkit.MapKitFactory
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -28,6 +30,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val userViewModel: UserViewModel by viewModels()
+    private val ticketsViewModel: TicketsViewModel by viewModels()
 
     private lateinit var binding: ActivityMainBinding
 
@@ -35,6 +38,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
+
+        MapKitFactory.initialize(this);
+
 
         setContentView(binding.root)
 
