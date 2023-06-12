@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.fragments.MapFragment">
+    tools:context=".presentation.fragments.RealityFragment">
 
-    <com.yandex.mapkit.mapview.MapView
-        android:id="@+id/mapview"
+    <io.github.sceneview.ar.ArSceneView
+        android:id="@+id/sceneView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </FrameLayout>

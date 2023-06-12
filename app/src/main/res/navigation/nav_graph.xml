@@ -21,9 +21,9 @@
         tools:layout="@layout/fragment_tickets" />
     <fragment
         android:id="@+id/mapFragment"
-        android:name="com.markvtls.diploma.presentation.fragments.MapFragment"
+        android:name="com.markvtls.diploma.presentation.fragments.RealityFragment"
         android:label="Карта"
-        tools:layout="@layout/fragment_map" />
+        tools:layout="@layout/fragment_reality" />
     <fragment
         android:id="@+id/userFragment"
         android:name="com.markvtls.diploma.presentation.fragments.UserFragment"
