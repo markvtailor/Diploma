@@ -42,8 +42,13 @@ android {
 
 dependencies {
 
-   /* //ARCore
-    implementation 'com.google.ar:core:1.37.0'*/
+
+    //SplashScreenApi
+    implementation 'androidx.core:core-splashscreen:1.0.1'
+
+
+    /* //ARCore
+     implementation 'com.google.ar:core:1.37.0'*/
 
     //Material Design
     implementation 'com.google.android.material:material:1.9.0'
