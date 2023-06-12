@@ -52,7 +52,8 @@ class MainFragment : Fragment() {
 
         ticketsViewModel.currentTickets.observe(viewLifecycleOwner) {
             val list = it.toMutableList()
-            list.addAll(ticketsViewModel.newTickets)
+            println(it)
+            //list.addAll(ticketsViewModel.newTickets)
             adapter?.submitList(list)
         }
 

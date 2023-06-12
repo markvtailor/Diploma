@@ -1,10 +1,11 @@
 package com.markvtls.diploma.presentation.fragments.transaction
 
-import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -15,7 +16,6 @@ import com.github.alexzhirkevich.customqrgenerator.vector.QrVectorOptions
 import com.github.alexzhirkevich.customqrgenerator.vector.style.*
 import com.markvtls.diploma.R
 import com.markvtls.diploma.databinding.FragmentOrderResultBinding
-import com.markvtls.diploma.domain.model.Ticket
 import com.markvtls.diploma.presentation.fragments.TicketsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.time.LocalDateTime
@@ -43,18 +43,10 @@ class OrderResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        ticketsViewModel.saveUserTicket()
+
         binding.qrcode.setImageDrawable(getQrCodeBitmap())
 
-        ticketsViewModel.newTickets.add(
-            Ticket(
-                ticketsViewModel.lastTicketStartPoint,
-                "Причал 1",
-                ticketsViewModel.lastTicketDestination,
-                "Причал 2",
-                LocalDateTime.now().plusDays(7),
-                ticketsViewModel.lastTicketSum
-            )
-        )
 
         with(binding) {
 

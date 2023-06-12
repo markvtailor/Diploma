@@ -9,6 +9,7 @@
     <application
         android:name=".DiplomApp"
         android:allowBackup="true"
+        android:screenOrientation="portrait"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"

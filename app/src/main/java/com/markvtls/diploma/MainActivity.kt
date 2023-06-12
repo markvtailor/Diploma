@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        MapKitFactory.initialize(this);
+        MapKitFactory.initialize(this)
 
 
         setContentView(binding.root)
@@ -74,6 +74,8 @@ class MainActivity : AppCompatActivity() {
             val user = FirebaseAuth.getInstance().currentUser
             userViewModel.saveUserPhone(user?.phoneNumber)
             userViewModel.saveUserEmail(user?.email)
+
+            if (user?.email != null) ticketsViewModel.loadUserTickets(user.email) else if (user?.phoneNumber != null) ticketsViewModel.loadUserTickets(user.phoneNumber)
         } else {
             // Sign in failed. If response is null the user canceled the
             // sign-in flow using the back button. Otherwise check

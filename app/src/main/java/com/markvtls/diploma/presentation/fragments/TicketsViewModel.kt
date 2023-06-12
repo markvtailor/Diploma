@@ -14,6 +14,7 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
+import java.time.LocalDate
 import javax.inject.Inject
 
 @HiltViewModel
@@ -43,7 +44,8 @@ class TicketsViewModel @Inject constructor(
         MutableLiveData<PaymentType>(PaymentType.MASTERCARD)
     }
 
-    val newTickets = mutableListOf<Ticket>()
+
+
 
     private val eventChannel = Channel<Event>(Channel.BUFFERED)
     val eventsFlow = eventChannel.receiveAsFlow()
@@ -59,8 +61,7 @@ class TicketsViewModel @Inject constructor(
         if (userIdentificator != null) {
             viewModelScope.launch(Dispatchers.IO + SupervisorJob()) {
                 try {
-                    val tickets = getUserTicketsUseCase(userIdentificator)
-                    _currentTickets.postValue(tickets)
+                    getUserTicketsUseCase(userIdentificator, _currentTickets)
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
@@ -68,10 +69,19 @@ class TicketsViewModel @Inject constructor(
         }
     }
 
-    fun saveUserTicket(ticket: Ticket) {
+    fun saveUserTicket() {
         viewModelScope.launch(Dispatchers.IO + SupervisorJob()) {
             try {
-                saveUserTicketUseCase(ticket)
+                val currentTicket = Ticket(
+                    locationFrom = lastTicketStartPoint,
+                    locationFromSecondary = "Причал 1",
+                    locationTo = lastTicketDestination,
+                    locationToSecondary = "Причал 2",
+                    sum = lastTicketSum,
+                    expireDate = LocalDate.now().plusDays(7)
+                )
+
+                saveUserTicketUseCase(currentTicket)
             } catch (e: Exception) {
                 e.printStackTrace()
             }

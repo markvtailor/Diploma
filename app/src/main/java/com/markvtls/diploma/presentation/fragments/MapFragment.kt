@@ -18,10 +18,6 @@ class MapFragment : Fragment() {
     private var _binding: FragmentMapBinding? = null
     private val binding get() = _binding!!
     private var mapView: MapView? = null
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

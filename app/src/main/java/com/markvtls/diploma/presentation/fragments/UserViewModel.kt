@@ -58,7 +58,7 @@ class UserViewModel @Inject constructor(
 
     fun getUserPhone() {
         viewModelScope.launch(Dispatchers.IO) {
-            getUserPhoneUseCase().collect() {
+            getUserPhoneUseCase().collect {
                 _userPhone.value = it
             }
         }

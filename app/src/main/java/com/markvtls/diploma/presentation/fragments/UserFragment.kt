@@ -1,22 +1,19 @@
 package com.markvtls.diploma.presentation.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.button.MaterialButton
 import com.google.firebase.auth.FirebaseAuth
-import com.markvtls.diploma.R
 import com.markvtls.diploma.databinding.FragmentUserBinding
 import com.markvtls.diploma.domain.model.Ticket
 import com.markvtls.diploma.presentation.adapters.TicketAdapter
 import dagger.hilt.android.AndroidEntryPoint
-import java.time.LocalDateTime
-import java.util.*
+import java.time.LocalDate
 
 @AndroidEntryPoint
 class UserFragment : Fragment() {
@@ -34,6 +31,7 @@ class UserFragment : Fragment() {
         _binding = FragmentUserBinding.inflate(inflater, container, false)
         return binding.root
     }
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -70,11 +68,10 @@ class UserFragment : Fragment() {
             val activeTickets = mutableListOf<Ticket>()
 
             it.forEach {
-                if (LocalDateTime.now().isBefore(it.expireDate)) {
+                if (LocalDate.now().isBefore(it.expireDate)) {
                     activeTickets.add(it)
                 }
             }
-            activeTickets.addAll(ticketsViewModel.newTickets)
             adapter?.submitList(activeTickets)
         }
     }
@@ -84,7 +81,7 @@ class UserFragment : Fragment() {
             val oldTickets = mutableListOf<Ticket>()
 
             it.forEach {
-                if (LocalDateTime.now().isAfter(it.expireDate)) {
+                if (LocalDate.now().isAfter(it.expireDate)) {
                     oldTickets.add(it)
                 }
             }
