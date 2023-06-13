@@ -85,7 +85,8 @@ class MainActivity : AppCompatActivity() {
             val user = FirebaseAuth.getInstance().currentUser
             userViewModel.saveUserPhone(user?.phoneNumber)
             userViewModel.saveUserEmail(user?.email)
-
+            println(user?.email)
+            println(user?.phoneNumber)
             if (user?.email != null) ticketsViewModel.loadUserTickets(user.email) else if (user?.phoneNumber != null) ticketsViewModel.loadUserTickets(user.phoneNumber)
         } else {
             signInLauncher.launch(signInIntent)

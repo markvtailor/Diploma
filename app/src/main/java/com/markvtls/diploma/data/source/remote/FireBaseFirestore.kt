@@ -2,7 +2,10 @@ package com.markvtls.diploma.data.source.remote
 
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
+import com.markvtls.diploma.MainActivity
 import com.markvtls.diploma.data.pojo.TicketPojo
 import com.markvtls.diploma.domain.model.Ticket
 import com.markvtls.diploma.domain.model.toDomain
@@ -15,13 +18,17 @@ class FireBaseFirestore {
     private var db = FirebaseFirestore.getInstance()
 
 
-    private val userIdentificator =
-        if (FirebaseAuth.getInstance().currentUser?.email != null) {
-            FirebaseAuth.getInstance().currentUser?.email
-        } else FirebaseAuth.getInstance().currentUser?.phoneNumber
+
 
 
     fun saveTicketToDataBase(ticket: Ticket) {
+
+        val user = Firebase.auth.currentUser
+
+        val userIdentificator =
+            if (user?.email != null) {
+                user.email
+            } else user?.phoneNumber
 
         val formatter =  DateTimeFormatter.ofPattern("dd.MM.yyyy")
 
@@ -33,6 +40,8 @@ class FireBaseFirestore {
             "sum" to ticket.sum,
             "expireDate" to ticket.expireDate.format(formatter).toString()
         )
+
+        println("USR ${Firebase.auth}")
         println("SUCCESS $userIdentificator")
         if (userIdentificator != null) {
             db.collection(userIdentificator)
@@ -42,6 +51,14 @@ class FireBaseFirestore {
     }
 
     fun getUserTickets(listener: MutableLiveData<List<Ticket>>) {
+
+        val user = Firebase.auth.currentUser
+
+        val userIdentificator =
+            if (user?.email != null) {
+                user.email
+            } else user?.phoneNumber
+
         if (userIdentificator != null) {
             db.collection(userIdentificator)
                 .get()
