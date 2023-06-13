@@ -18,6 +18,7 @@ import com.markvtls.diploma.R
 import com.markvtls.diploma.databinding.FragmentOrderResultBinding
 import com.markvtls.diploma.presentation.fragments.TicketsViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import java.nio.charset.StandardCharsets
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -144,7 +145,7 @@ class OrderResultFragment : Fragment() {
             )
             .build()
 
-        return QrCodeDrawable(data, options, Charsets.UTF_8)
+        return QrCodeDrawable(data, options, StandardCharsets.UTF_8)
 
     }
 }
