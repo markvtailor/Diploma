@@ -42,8 +42,7 @@ android {
 
 dependencies {
 
-
-    implementation("com.google.ar:core:1.37.0")
+    implementation 'io.github.sceneview:arsceneview:0.9.9'
 
     //SplashScreenApi
     implementation 'androidx.core:core-splashscreen:1.0.1'
