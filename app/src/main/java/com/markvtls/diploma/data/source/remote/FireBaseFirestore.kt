@@ -33,7 +33,7 @@ class FireBaseFirestore {
             "sum" to ticket.sum,
             "expireDate" to ticket.expireDate.format(formatter).toString()
         )
-
+        println("SUCCESS $userIdentificator")
         if (userIdentificator != null) {
             db.collection(userIdentificator)
                 .document("Ticket ${UUID.randomUUID()}")
@@ -53,7 +53,6 @@ class FireBaseFirestore {
                     }
 
                     listener.value = userTickets
-
 
 
 

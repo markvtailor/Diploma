@@ -13,6 +13,8 @@ import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.ActionCodeSettings
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.markvtls.diploma.databinding.ActivityMainBinding
 import com.markvtls.diploma.presentation.fragments.TicketsViewModel
 import com.markvtls.diploma.presentation.fragments.UserViewModel
@@ -65,8 +67,14 @@ class MainActivity : AppCompatActivity() {
         findViewById<BottomNavigationView>(R.id.bottom_nav)
             .setupWithNavController(navController)
 
+        val user = Firebase.auth.currentUser
+        if (user != null) {
+            if (user?.email != null) ticketsViewModel.loadUserTickets(user.email) else if (user?.phoneNumber != null) ticketsViewModel.loadUserTickets(user.phoneNumber)
+        } else {
+            signInLauncher.launch(signInIntent)
+        }
 
-        signInLauncher.launch(signInIntent)
+
     }
 
 
@@ -80,6 +88,7 @@ class MainActivity : AppCompatActivity() {
 
             if (user?.email != null) ticketsViewModel.loadUserTickets(user.email) else if (user?.phoneNumber != null) ticketsViewModel.loadUserTickets(user.phoneNumber)
         } else {
+            signInLauncher.launch(signInIntent)
             // Sign in failed. If response is null the user canceled the
             // sign-in flow using the back button. Otherwise check
             // response.getError().getErrorCode() and handle the error.

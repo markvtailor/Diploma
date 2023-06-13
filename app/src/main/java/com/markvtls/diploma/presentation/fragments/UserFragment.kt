@@ -8,7 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.button.MaterialButton
-import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.markvtls.diploma.databinding.FragmentUserBinding
 import com.markvtls.diploma.domain.model.Ticket
 import com.markvtls.diploma.presentation.adapters.TicketAdapter
@@ -39,8 +40,11 @@ class UserFragment : Fragment() {
 
         initTicketsList()
 
-        val user = FirebaseAuth.getInstance().currentUser
-        if (user?.phoneNumber != null) binding.header.text = user.phoneNumber else if (user?.email != null) binding.header.text = user.email
+        val user = Firebase.auth.currentUser
+
+
+        println(user?.phoneNumber.isNullOrEmpty())
+        if (!user?.phoneNumber.isNullOrEmpty()) binding.header.text = user?.phoneNumber else if (!user?.email.isNullOrEmpty()) binding.header.text = user?.email
 
         loadActiveTickets()
 
