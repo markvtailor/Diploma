@@ -7,12 +7,12 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.markvtls.diploma.databinding.ItemTicketBinding
 import com.markvtls.diploma.domain.model.Ticket
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
+/*
 class TicketAdapter : ListAdapter<Ticket, TicketAdapter.TicketViewHolder>(DiffCallback) {
 
     override fun onCreateViewHolder(
@@ -59,4 +59,4 @@ class TicketAdapter : ListAdapter<Ticket, TicketAdapter.TicketViewHolder>(DiffCa
 
         }
     }
-}
+}*/

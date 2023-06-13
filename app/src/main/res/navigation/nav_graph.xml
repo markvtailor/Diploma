@@ -20,11 +20,6 @@
         android:label="Тарифы"
         tools:layout="@layout/fragment_tickets" />
     <fragment
-        android:id="@+id/mapFragment"
-        android:name="com.markvtls.diploma.presentation.fragments.RealityFragment"
-        android:label="Карта"
-        tools:layout="@layout/fragment_reality" />
-    <fragment
         android:id="@+id/userFragment"
         android:name="com.markvtls.diploma.presentation.fragments.UserFragment"
         android:label="Профиль"
@@ -47,4 +42,9 @@
             android:id="@+id/action_orderResultFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment><action android:id="@+id/action_global_mainFragment" app:destination="@id/mainFragment"/>
+    <fragment
+        android:id="@+id/realityFragment"
+        android:name="com.markvtls.diploma.presentation.fragments.RealityFragment"
+        android:label="fragment_reality"
+        tools:layout="@layout/fragment_reality" />
 </navigation>

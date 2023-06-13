@@ -11,7 +11,6 @@ import com.google.android.material.button.MaterialButton
 import com.google.firebase.auth.FirebaseAuth
 import com.markvtls.diploma.databinding.FragmentUserBinding
 import com.markvtls.diploma.domain.model.Ticket
-import com.markvtls.diploma.presentation.adapters.TicketAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import java.time.LocalDate
 
@@ -22,7 +21,7 @@ class UserFragment : Fragment() {
     private val binding get() = _binding!!
     private val ticketsViewModel: TicketsViewModel by viewModels({requireActivity()})
 
-    private var adapter: TicketAdapter? = null
+    //private var adapter: TicketAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,7 +36,7 @@ class UserFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initTicketsList()
+      /*  initTicketsList()
 
         val user = FirebaseAuth.getInstance().currentUser
         if (user?.phoneNumber != null) binding.header.text = user.phoneNumber else if (user?.email != null) binding.header.text = user.email
@@ -52,11 +51,11 @@ class UserFragment : Fragment() {
                 loadOldTickets()
             }
 
-        }
+        }*/
     }
 
 
-    private fun initTicketsList() {
+   /* private fun initTicketsList() {
         val ticketsList = binding.userTicketsList
         adapter = TicketAdapter()
         ticketsList.layoutManager = LinearLayoutManager(requireContext())
@@ -87,5 +86,5 @@ class UserFragment : Fragment() {
             }
             adapter?.submitList(oldTickets)
         }
-    }
+    }*/
 }

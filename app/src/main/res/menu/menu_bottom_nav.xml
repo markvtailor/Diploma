@@ -5,9 +5,9 @@
         android:icon="@drawable/ic_ship"
         android:title="Главная" />
     <item
-        android:id="@+id/mapFragment"
+        android:id="@+id/realityFragment"
         android:icon="@drawable/ic_globe"
-        android:title="Карта" />
+        android:title="Камера" />
     <item
         android:id="@+id/userFragment"
         android:icon="@drawable/ic_user"

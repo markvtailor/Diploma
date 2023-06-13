@@ -12,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.markvtls.diploma.R
 import com.markvtls.diploma.databinding.FragmentMainBinding
-import com.markvtls.diploma.presentation.adapters.TicketAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -26,7 +25,7 @@ class MainFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
-    private var adapter: TicketAdapter? = null
+   // private var adapter: TicketAdapter? = null
 
 
     override fun onCreateView(
@@ -40,7 +39,7 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initTicketsList()
+        /*initTicketsList()
 
         viewLifecycleOwner.lifecycleScope.launch {
                 userViewModel.userEmail.collect { email ->
@@ -75,9 +74,9 @@ class MainFragment : Fragment() {
                     findNavController().navigate(action)
                 }
             }
-        }
+        }*/
     }
-
+/*
     private fun initTicketsList() {
         val ticketsList = binding.userTicketsList
         adapter = TicketAdapter()
@@ -115,5 +114,5 @@ class MainFragment : Fragment() {
         if (startPoint.isNotBlank() && startPoint.isNotEmpty()) ticketsViewModel.lastTicketStartPoint = startPoint
         if (endPoint.isNotBlank() && endPoint.isNotEmpty()) ticketsViewModel.lastTicketDestination = endPoint
 
-    }
+    }*/
 }
