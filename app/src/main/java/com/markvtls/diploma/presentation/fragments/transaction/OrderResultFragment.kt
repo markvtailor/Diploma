@@ -18,7 +18,7 @@ import com.markvtls.diploma.R
 import com.markvtls.diploma.databinding.FragmentOrderResultBinding
 import com.markvtls.diploma.presentation.fragments.TicketsViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import java.nio.charset.StandardCharsets
+import java.nio.charset.Charset
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -109,11 +109,11 @@ class OrderResultFragment : Fragment() {
 
     private fun getQrCodeBitmap(): Drawable {
         val data = QrData.Text(
-            "Куда: ${ticketsViewModel.lastTicketDestination} \n" +
-                    "Откуда: ${ticketsViewModel.lastTicketStartPoint} \n" +
-                    "Детей: ${ticketsViewModel.lastTicketKidsCount} \n" +
-                    "Взрослых: ${ticketsViewModel.lastTicketAdultsCount} \n" +
-                    "Сумма: ${ticketsViewModel.lastTicketSum}"
+            "Kuda: ${ticketsViewModel.lastTicketDestination} \n" +
+                    "Otkuda: ${ticketsViewModel.lastTicketStartPoint} \n" +
+                    "Deti: ${ticketsViewModel.lastTicketKidsCount} \n" +
+                    "Vzroslie: ${ticketsViewModel.lastTicketAdultsCount} \n" +
+                    "Summa: ${ticketsViewModel.lastTicketSum}"
         )
 
         val options = QrVectorOptions.Builder()
@@ -145,7 +145,10 @@ class OrderResultFragment : Fragment() {
             )
             .build()
 
-        return QrCodeDrawable(data, options, StandardCharsets.UTF_8)
+
+
+
+        return QrCodeDrawable(data, options)
 
     }
 }
