@@ -74,6 +74,14 @@ class MainActivity : AppCompatActivity() {
             signInLauncher.launch(signInIntent)
         }
 
+        userViewModel.isLogged.observe(this) { isLogged ->
+            if (!isLogged) {
+                AuthUI.getInstance().signOut(this)
+                    .addOnSuccessListener {
+                        signInLauncher.launch(signInIntent)
+                    }
+            }
+        }
 
     }
 
@@ -85,6 +93,7 @@ class MainActivity : AppCompatActivity() {
             val user = FirebaseAuth.getInstance().currentUser
             userViewModel.saveUserPhone(user?.phoneNumber)
             userViewModel.saveUserEmail(user?.email)
+            userViewModel._isLogged.value = true
             println(user?.email)
             println(user?.phoneNumber)
             if (user?.email != null) ticketsViewModel.loadUserTickets(user.email) else if (user?.phoneNumber != null) ticketsViewModel.loadUserTickets(user.phoneNumber)

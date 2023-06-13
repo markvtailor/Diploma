@@ -6,10 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.firebase.ui.auth.AuthUI
 import com.google.android.material.button.MaterialButton
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.markvtls.diploma.R
 import com.markvtls.diploma.databinding.FragmentUserBinding
 import com.markvtls.diploma.domain.model.Ticket
 import com.markvtls.diploma.presentation.adapters.TicketAdapter
@@ -22,6 +25,7 @@ class UserFragment : Fragment() {
     private var _binding: FragmentUserBinding? = null
     private val binding get() = _binding!!
     private val ticketsViewModel: TicketsViewModel by viewModels({requireActivity()})
+    private val userViewModel: UserViewModel by viewModels({requireActivity()})
 
     private var adapter: TicketAdapter? = null
 
@@ -43,6 +47,13 @@ class UserFragment : Fragment() {
         val user = Firebase.auth.currentUser
 
 
+        userViewModel.isLogged.observe(viewLifecycleOwner) { isLogged ->
+            if (isLogged) {
+                if (!user?.phoneNumber.isNullOrEmpty()) binding.header.text = user?.phoneNumber
+                if (!user?.email.isNullOrEmpty()) binding.header.text = user?.email
+            }
+        }
+
         println(user?.phoneNumber.isNullOrEmpty())
         if (!user?.phoneNumber.isNullOrEmpty()) binding.header.text = user?.phoneNumber else if (!user?.email.isNullOrEmpty()) binding.header.text = user?.email
 
@@ -56,6 +67,13 @@ class UserFragment : Fragment() {
                 loadOldTickets()
             }
 
+        }
+
+
+
+        binding.logout.setOnClickListener {
+            userViewModel._isLogged.value = false
+            findNavController().navigate(R.id.action_global_mainFragment)
         }
     }
 

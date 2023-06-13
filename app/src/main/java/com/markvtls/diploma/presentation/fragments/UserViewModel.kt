@@ -1,7 +1,10 @@
 package com.markvtls.diploma.presentation.fragments
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.markvtls.diploma.domain.model.Ticket
 import com.markvtls.diploma.domain.usecases.userinfo.GetUserEmailUseCase
 import com.markvtls.diploma.domain.usecases.userinfo.GetUserPhoneUseCase
 import com.markvtls.diploma.domain.usecases.userinfo.SaveUserEmailUseCase
@@ -27,6 +30,12 @@ class UserViewModel @Inject constructor(
     private val _userEmail = MutableStateFlow("")
     val userEmail: StateFlow<String> get() = _userEmail
 
+
+     val _isLogged: MutableLiveData<Boolean> by lazy {
+        MutableLiveData<Boolean>(true)
+    }
+
+    val isLogged: LiveData<Boolean> get() = _isLogged
 
     init {
         getUserEmail()
