@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "361705181137",
-    "project_id": "diplommy-9138b",
-    "storage_bucket": "diplommy-9138b.appspot.com"
+    "project_number": "74251211760",
+    "project_id": "diplom-ar-423dd",
+    "storage_bucket": "diplom-ar-423dd.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:361705181137:android:8b28ee201624d8f5675af0",
+        "mobilesdk_app_id": "1:74251211760:android:f28237ac8cee5dd6418335",
         "android_client_info": {
-          "package_name": "com.markvtls.diploma"
+          "package_name": "com.markvtls.diploma_aug"
         }
       },
       "oauth_client": [
         {
-          "client_id": "361705181137-ss70oti3hreiitb82dmg2pemdttnoavj.apps.googleusercontent.com",
+          "client_id": "74251211760-2tr482duo27snu5kntirlfeqd6n9ab80.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.markvtls.diploma",
-            "certificate_hash": "0b0b3ca87bd7b0f9f8ea67196a0782d1a7b3a3e6"
+            "package_name": "com.markvtls.diploma_aug",
+            "certificate_hash": "bf069a0d3168a2636c31f4400999e8d1eb5ef35f"
           }
         },
         {
-          "client_id": "361705181137-diremluk9okbvpq1uurlail46ndoekd3.apps.googleusercontent.com",
+          "client_id": "74251211760-28794tsuu31r6fau15cga0233kujc30p.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBMRVnyM0F4ehRKPM4W3ul9EMBON4qEocM"
+          "current_key": "AIzaSyCvuLIjw2gGW8FUXdwaXOS-Uet_RVZqDBw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "361705181137-diremluk9okbvpq1uurlail46ndoekd3.apps.googleusercontent.com",
+              "client_id": "74251211760-28794tsuu31r6fau15cga0233kujc30p.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

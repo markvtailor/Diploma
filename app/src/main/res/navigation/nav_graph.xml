@@ -7,44 +7,43 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.markvtls.diploma.presentation.fragments.MainFragment"
+        android:name="com.markvtls.diploma_aug.presentation.fragments.MainFragment"
         android:label="Главная"
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_orderFormFragment"
             app:destination="@id/orderFormFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/ticketsFragment"
-        android:name="com.markvtls.diploma.presentation.fragments.TicketsFragment"
-        android:label="Тарифы"
-        tools:layout="@layout/fragment_tickets" />
-    <fragment
-        android:id="@+id/mapFragment"
-        android:name="com.markvtls.diploma.presentation.fragments.MapFragment"
-        android:label="Карта"
-        tools:layout="@layout/fragment_map" />
+
     <fragment
         android:id="@+id/userFragment"
-        android:name="com.markvtls.diploma.presentation.fragments.UserFragment"
+        android:name="com.markvtls.diploma_aug.presentation.fragments.UserFragment"
         android:label="Профиль"
         tools:layout="@layout/fragment_user" />
     <fragment
         android:id="@+id/orderFormFragment"
-        android:name="com.markvtls.diploma.presentation.fragments.transaction.OrderFormFragment"
+        android:name="com.markvtls.diploma_aug.presentation.fragments.transaction.OrderFormFragment"
         android:label="fragment_order_form"
         tools:layout="@layout/fragment_order_form" >
         <action
             android:id="@+id/action_orderFormFragment_to_orderResultFragment"
             app:destination="@id/orderResultFragment" />
+        <action
+            android:id="@+id/action_orderFormFragment_to_realityFragment"
+            app:destination="@id/realityFragment" />
     </fragment>
     <fragment
         android:id="@+id/orderResultFragment"
-        android:name="com.markvtls.diploma.presentation.fragments.transaction.OrderResultFragment"
+        android:name="com.markvtls.diploma_aug.presentation.fragments.transaction.OrderResultFragment"
         android:label="fragment_order_result"
         tools:layout="@layout/fragment_order_result" >
         <action
             android:id="@+id/action_orderResultFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment><action android:id="@+id/action_global_mainFragment" app:destination="@id/mainFragment"/>
+    <fragment
+        android:id="@+id/realityFragment"
+        android:name="com.markvtls.diploma_aug.presentation.fragments.RealityFragment"
+        android:label="fragment_reality"
+        tools:layout="@layout/fragment_reality" />
 </navigation>

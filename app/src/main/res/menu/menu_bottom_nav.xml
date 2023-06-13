@@ -3,11 +3,8 @@
     <item
         android:id="@+id/mainFragment"
         android:icon="@drawable/ic_ship"
-        android:title="Главная" />
-    <item
-        android:id="@+id/mapFragment"
-        android:icon="@drawable/ic_globe"
-        android:title="Карта" />
+        android:title="Лента" />
+
     <item
         android:id="@+id/userFragment"
         android:icon="@drawable/ic_user"

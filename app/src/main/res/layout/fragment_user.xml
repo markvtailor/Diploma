@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="66dp"
+    android:background="#3f464a"
     tools:context=".presentation.fragments.UserFragment">
 
     <TextView
@@ -64,6 +65,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:layout_constraintTop_toBottomOf="@id/toggleButton"
-        tools:listitem="@layout/item_ticket"/>
+        tools:listitem="@layout/item_image"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

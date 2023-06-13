@@ -7,13 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".presentation.fragments.MainFragment"
     android:paddingBottom="56dp"
-    android:background="@color/light_gray">
+    android:background="#3f464a">
 
     <TextView
         android:id="@+id/header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Маршруты"
+        android:text="Последние изображения"
         android:textColor="@color/dark_blue"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -21,263 +21,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="16dp"/>
-    
-    
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/destination_card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:strokeColor="@color/white"
-        android:paddingBottom="16dp"
-        app:layout_constraintTop_toBottomOf="@id/header">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:layout_marginStart="16dp"
-                android:id="@+id/destination_image"
-                android:src="@drawable/ic_from"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/text_from"
-                app:layout_constraintBottom_toBottomOf="@id/text_from"
-                app:layout_constraintEnd_toStartOf="@id/text_from"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <ImageView
-                android:layout_marginStart="16dp"
-                android:id="@+id/destination_image_two"
-                android:src="@drawable/ic_to"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/text_to"
-                app:layout_constraintBottom_toBottomOf="@id/text_to"
-                app:layout_constraintEnd_toStartOf="@id/text_to"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/text_from"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" android:layout_marginTop="8dp"
-            app:boxStrokeWidth="0dp"
-            app:boxStrokeColor="@color/white"
-            app:layout_constraintStart_toEndOf="@id/destination_image"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:hint="Откуда">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:fontFamily="@font/lack_regular"
-                    android:maxLength="20"
-                    android:maxLines="1"
-                    android:textColor="@color/dark_blue" />
-
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.divider.MaterialDivider
-                app:layout_constraintTop_toBottomOf="@id/text_from"
-                app:layout_constraintBottom_toTopOf="@id/text_to"
-                app:layout_constraintStart_toStartOf="@id/text_to"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="16dp"
-                android:layout_width="0dp"
-                android:layout_height="2dp"/>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_to"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:boxStrokeWidth="0dp"
-                app:boxStrokeColor="@color/white"
-                app:layout_constraintStart_toEndOf="@id/destination_image"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text_from"
-                android:hint="Куда">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:maxLength="20"
-                    android:maxLines="1"
-                    android:textColor="@color/dark_blue"
-                    android:fontFamily="@font/lack_regular"
-                    />
-
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/way_layout"
-                app:layout_constraintTop_toBottomOf="@id/text_to"
-                android:layout_width="match_parent"
-                android:layout_margin="16dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content">
-
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card_parom"
-                    android:layout_width="0dp"
-                    android:layout_height="64dp"
-                    app:strokeWidth="2dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/card_passengers"
-                    app:layout_constraintTop_toTopOf="parent"
-                    style="?attr/materialCardViewElevatedStyle"
-                    app:strokeColor="@color/white">
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_margin="8dp"
-                        android:layout_width="match_parent"
-                        android:orientation="vertical"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:src="@drawable/ic_parom"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Паромы"
-                            android:textSize="11sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/dark_blue"
-                            android:fontFamily="@font/lack_regular"/>
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-                </com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card_passengers"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_width="0dp"
-                    android:layout_height="64dp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/card_parom"
-                    app:layout_constraintEnd_toStartOf="@id/card_airship"
-                    style="?attr/materialCardViewElevatedStyle"
-                    app:strokeColor="@color/white"
-                    app:strokeWidth="2dp">
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:layout_margin="8dp"
-                        android:orientation="vertical"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:src="@drawable/ic_passengers"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Пассажирские"
-                            android:textColor="@color/dark_blue"
-                            android:textStyle="bold"
-                            android:textSize="11sp"
-                            android:fontFamily="@font/lack_regular"/>
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-                </com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card_airship"
-                    android:layout_width="0dp"
-                    android:layout_height="64dp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:strokeWidth="2dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/card_passengers"
-                    style="?attr/materialCardViewElevatedStyle"
-                    app:strokeColor="@color/white">
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:layout_margin="8dp"
-                        android:orientation="vertical"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:src="@drawable/ic_airship"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Подушки"
-                            android:textSize="11sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/dark_blue"
-                            android:fontFamily="@font/lack_regular"/>
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-                </com.google.android.material.card.MaterialCardView>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/proceed_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/way_layout"
-                android:layout_margin="16dp"
-                android:text="Продолжить"
-                android:fontFamily="@font/lack_regular"
-                android:textStyle="bold"/>
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <TextView
-        android:id="@+id/tickets_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Мои билеты"
-        android:textColor="@color/dark_blue"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/lack_regular"
-        app:layout_constraintTop_toBottomOf="@id/destination_card"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="16dp"/>
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/user_tickets_list"
+        android:id="@+id/images_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="16dp"
-        app:layout_constraintTop_toBottomOf="@id/tickets_header"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/item_ticket"/>
+        app:layout_constraintTop_toBottomOf="@id/header"
+        tools:listitem="@layout/item_image" />
 </androidx.constraintlayout.widget.ConstraintLayout>

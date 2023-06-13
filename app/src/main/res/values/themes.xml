@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.DiplomaMy" parent="Theme.Material3.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/gray_blue</item>
+        <item name="colorPrimary">#0f7abd</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -16,7 +16,7 @@
 
     <style name="Theme.DiplomaMy.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/white</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/icon_splash</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_camera</item>
         <item name="postSplashScreenTheme">@style/Theme.DiplomaMy</item>
     </style>
 
