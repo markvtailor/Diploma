@@ -108,7 +108,7 @@
                 android:textSize="16sp"
                 android:textColor="#0f7abd"
                 android:textStyle="bold"
-                app:strokeColor="@color/gray_blue"
+                app:strokeColor="#0f7abd"
                 app:strokeWidth="2dp"
                 app:backgroundTint="@color/white"/>
 

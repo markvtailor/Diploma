@@ -31,8 +31,6 @@ class FireBaseFirestore {
             "isDelivered" to model.isDelivered
         )
 
-        println("USR ${Firebase.auth}")
-        println("SUCCESS $userIdentificator")
         if (userIdentificator != null) {
             db.collection(userIdentificator)
                 .document("ImageOrder ${UUID.randomUUID()}")
@@ -60,9 +58,6 @@ class FireBaseFirestore {
                     }
 
                     listener.value = userOrders
-
-
-
                 }
         }
     }

@@ -49,16 +49,6 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment?
                 ?: return
 
-        lifecycleScope.launch {
-            userViewModel.userEmail.collect { email ->
-                userViewModel.userPhone.collect { phone ->
-                    println(phone)
-                    println(email)
-                }
-
-            }
-        }
-
         val navController = navHostFragment.navController
         findViewById<BottomNavigationView>(R.id.bottom_nav)
             .setupWithNavController(navController)
@@ -69,7 +59,6 @@ class MainActivity : AppCompatActivity() {
         } else {
             signInLauncher.launch(signInIntent)
         }
-
         userViewModel.isLogged.observe(this) { isLogged ->
             if (!isLogged) {
                 AuthUI.getInstance().signOut(this)

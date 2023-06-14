@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/mainFragment"
-        android:icon="@drawable/ic_ship"
+        android:icon="@drawable/ic_camera"
         android:title="Лента" />
 
     <item
